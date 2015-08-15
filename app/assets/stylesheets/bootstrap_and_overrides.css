@@ -6,6 +6,11 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+
+.navbar {
+ margin-bottom: 0px;
+}
+
 .navbar-default .navbar-brand {
     color: #D02020;
     font-family: Baskerville;
