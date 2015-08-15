@@ -16,3 +16,7 @@
     font-family: Baskerville;
     font-size: 45px;
 }
+
+.navbar-default .navbar-brand:hover {
+    color: #D02020; 
+}

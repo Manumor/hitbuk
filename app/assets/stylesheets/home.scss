@@ -6,7 +6,7 @@
 
 
 .jumbotron1 {
-height: 550px;
+height: 600px;
 width: 100%;
 margin-top: 0px;
 margin-bottom: 0px;
@@ -36,5 +36,15 @@ height:100%;
 margin-top: 30px;
 margin-left: 30px;
 
+}
+.bs-docs-featurette {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.img-responsive {
+	width:400px;
+	height:200px;
 }
 
