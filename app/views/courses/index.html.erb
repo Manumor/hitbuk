@@ -1,0 +1,31 @@
+  <h3>Find a course!</h3>
+
+<%= search_form_for @search do |f| %>
+  <div class="field">
+     <%= f.label :university_country_cont, "Region" %>
+     <%= f.text_field :university_country_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :name_cont, "Course" %>
+    <%= f.text_field :name_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :ibpoints_gteq, "Minimum IB points" %>
+    <%= f.text_field :ibpoints_gteq %>
+    <%= f.label :ibpoints_lteq, "Maximum IB points" %>
+    <%= f.text_field :ibpoints_lteq %>
+  </div>
+  <div class="submit_input"><%= f.submit "Search" %></div>
+<% end %> 
+<br>
+
+<% @courses.each do |course| %>
+		<ul>
+   			<li> 
+    			<%= link_to course.name, course_path(course) %> - <%= @uni.find(course.university_id).name %>
+   			</li>
+ 		</ul>
+  <% end %>
+
+
+
