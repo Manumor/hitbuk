@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'will_paginate', '3.0.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

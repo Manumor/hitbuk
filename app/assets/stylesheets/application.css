@@ -55,3 +55,4 @@
 	margin-left: 39px;
 }
 
+*= require 'forem/base'
