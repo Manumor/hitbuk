@@ -6,7 +6,5 @@ class User < ActiveRecord::Base
   def forem_name
     username
   end
-  def forem_email
-  	email_address
-  end
+
 end
