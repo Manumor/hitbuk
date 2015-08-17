@@ -18,11 +18,11 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
-	                <li><%= link_to('My Account', edit_user_registration_path) %></li>
-					<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+	                <li><%= link_to('My Account', main_app.edit_user_registration_path) %></li>
+					<li><%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete %></li>
 				<% else %>
-					<li><%= link_to('Log in', new_user_session_path) %></li>
-					<li><%= link_to('Sign up', new_user_registration_path) %></li>
+					<li><%= link_to('Log in', main_app.new_user_session_path) %></li>
+					<li><%= link_to('Sign up', main_app.new_user_registration_path) %></li>
 				<% end %>
 			</ul>
 		</div><!--/.nav-collapse -->

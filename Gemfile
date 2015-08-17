@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'will_paginate', '3.0.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
