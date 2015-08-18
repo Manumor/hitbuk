@@ -16,3 +16,7 @@
 //= require turbolinks
 //= require_tree .
 //= require forem
+$('body').scrollspy({
+    target: '.bs-docs-sidebar',
+    offset: 40
+});
