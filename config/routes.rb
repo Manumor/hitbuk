@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+    get '/searches/university' => 'searches#university'
+    post '/searches/university' => 'searches#show_results'
     resources :courses
     devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
