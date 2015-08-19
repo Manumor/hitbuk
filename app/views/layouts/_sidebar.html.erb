@@ -8,6 +8,8 @@
         </span>
         <ul class="nav nav-stacked" >
             <li><a href="#GroupASub2">ToK and EE</a></li>
+            <div id="preferences">  
+            </div>
         </ul>
     </li>
     <li>
@@ -17,7 +19,6 @@
             <li><a href="#GroupASub2" >Discusion 2</a></li>
         </ul>
     </li>
-    <!-- Same for Group B & C -->
 </ul>
 
 <!-- Modal appears when you click on 'ADD' -->
@@ -26,29 +27,71 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Please select the subjects you are interested in:</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Please select the subjects you are interested in:</h4>
       </div>
       <div class="modal-body">
 
-    <div class="btn" id="button_subject" data-toggle="buttons">
-        <label class="btn btn-default">
-            <input type="checkbox"> Math HL
-        </label>
-        <label class="btn btn-default">
-            <input type="checkbox"> Math SL
-        </label>
-        <label class="btn btn-default">
-            <input type="checkbox"> Math Studies
-        </label>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Mathematics</a>
+                    </h4>
+                </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="btn" id="button_subject" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="Math Studies"> Math Studies
+                    </label>
+                    <label class="btn btn-default">
+                         <input type="checkbox" value="Math SL"> Math SL
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="Math HL"> Math HL
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="Further Math"> Further Math
+                    </label>
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Languages</a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="btn" id="button_subject" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="Spanish Ab Initio"> Spanish Ab Initio
+                    </label>
+                    <label class="btn btn-default">
+                         <input type="checkbox" value="Mandarin Ab Initio"> Mandarin Ab Initio
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="French Ab Initio"> French Ab Initio
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="German Ab Initio"> German Ab Initio
+                    </label>
+                </div> 
+            </div>
+        </div>
     </div>
 
-<input type="hidden" id="buttonvalue"/>
-      </div>
+            </div>
+        </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Select</button>
-      </div>
+        <div class="modal-footer">
+            <button id="submit_subjects" type="button" class="btn btn-primary" data-dismiss="modal">Select</button>
+        </div>
     </div>
   </div>
 </div>
+
+
