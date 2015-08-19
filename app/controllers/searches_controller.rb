@@ -5,11 +5,20 @@ class SearchesController < ApplicationController
 	end  
 	def show_results
 
-		universities = University.where("country = ?", "#{params[:country]}") 
-		courses = []
-		universities.each do |u|
-			cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
-			courses = courses + cs
+		if params[:country] == ""
+			universities = University.where("name LIKE ?", "%#{params[:university_name]}%")
+			courses = []
+				universities.each do |u|
+					cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
+					courses = courses + cs
+			    end 
+		else 
+			universities = University.where("country LIKE ? AND name LIKE ?", "#{params[:country]}", "%#{params[:university_name]}%") 
+			courses = []
+				universities.each do |u|
+					cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
+					courses = courses + cs
+			    end
 		end
 
 		if request.xhr?
