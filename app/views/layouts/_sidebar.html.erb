@@ -1,5 +1,15 @@
 
 <ul class="nav nav-stacked fixed bs-docs-sidebar" id="sidebar">
+
+     <li>
+        <span class="button_group">
+            <a href="#GroupA">Subjects</a>
+            <button id="button_subjects" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_add">Add</button>
+        </span>
+        <ul class="nav nav-stacked" >
+            <li><a href="#GroupASub2">ToK and EE</a></li>
+        </ul>
+    </li>
     <li>
         <a href="#GroupA">Featured Discussions</a>
         <ul class="nav nav-stacked" >
@@ -7,17 +17,38 @@
             <li><a href="#GroupASub2" >Discusion 2</a></li>
         </ul>
     </li>
-     <li>
-        <a href="#GroupA">Subjects</a>
-        <ul class="nav nav-stacked" >
-            <li><a href="#GroupASub1" >Math HL</a></li>
-            <li><a href="#GroupASub2" >English HL</a></li>
-            <li><a href="#GroupASub2" >Physics HL</a></li>
-             <li><a href="#GroupASub1" >Spanish SL</a></li>
-            <li><a href="#GroupASub2" >Biology SL</a></li>
-            <li><a href="#GroupASub2" >Business SL</a></li>
-            <li><a href="#GroupASub2">ToK and EE</a></li>
-        </ul>
-    </li>
     <!-- Same for Group B & C -->
 </ul>
+
+<!-- Modal appears when you click on 'ADD' -->
+
+<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Please select the subjects you are interested in:</h4>
+      </div>
+      <div class="modal-body">
+
+    <div class="btn" id="button_subject" data-toggle="buttons">
+        <label class="btn btn-default">
+            <input type="checkbox"> Math HL
+        </label>
+        <label class="btn btn-default">
+            <input type="checkbox"> Math SL
+        </label>
+        <label class="btn btn-default">
+            <input type="checkbox"> Math Studies
+        </label>
+    </div>
+
+<input type="hidden" id="buttonvalue"/>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Select</button>
+      </div>
+    </div>
+  </div>
+</div>
