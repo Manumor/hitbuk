@@ -13,10 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
 //= require_tree .
 //= require forem
-$('body').scrollspy({
-    target: '.bs-docs-sidebar',
-    offset: 40
-});
+
+
+

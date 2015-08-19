@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+University.create(name: "Oxford University", description: "one of the top universities in the UK", city: "Oxford", country: "England", image: "link", link: "link")
+University.create(name: "Cambridge University", description: "best university in the UK", city: "Cambridge", country: "England", image: "link", link: "link")
+University.create(name: "Essex University", description: "very valuable education", city: "Essex", country: "England", image: "link", link: "link")
+University.create(name: "Harvard University", description: "very valuable education", city: "Boston", country: "USA", image: "link", link: "link")
+
+Course.create(name: "Business", description: "Become a business man", alevels: "AABB", ibpoints: 33, aextra: "need to have taken business", ibextra: "HL business or economics", university_id: 1)
+Course.create(name: "Computer science", description: "Become a software engineer", alevels: "AABB", ibpoints: 36, aextra: "need to have taken math", ibextra: "HL math", university_id: 1)
+Course.create(name: "Medicine", description: "Become a doctor", alevels: "AAAA", ibpoints: 38, aextra: "need to have taken chemistry and biology", ibextra: "HL chemistry or biology", university_id: 2)
+Course.create(name: "Architect", description: "Become an architect", alevels: "AABB", ibpoints: 40, aextra: "need to have art and math", ibextra: "HL math", university_id: 2)
+Course.create(name: "Law", description: "Become a lawyer", alevels: "AAAB", ibpoints: 43, aextra: "None", ibextra: "None", university_id: 3)
+Course.create(name: "Music", description: "Become a musician", alevels: "ABBB", ibpoints: 30, aextra: "need to have taken music", ibextra: "HL music", university_id: 3)
+Course.create(name: "Business", description: "Become a business man", alevels: "AABB", ibpoints: 33, aextra: "need to have taken business", ibextra: "HL business or economics", university_id: 4)

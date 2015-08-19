@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+    get '/searches/university' => 'searches#university'
+    post '/searches/university' => 'searches#show_results'
+    resources :courses
+
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
   resources :about
 
   root to: 'home#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

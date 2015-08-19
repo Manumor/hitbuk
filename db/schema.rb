@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817094854) do
+ActiveRecord::Schema.define(version: 20150818094348) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "alevels"
+    t.integer  "ibpoints"
+    t.text     "aextra"
+    t.text     "ibextra"
+    t.integer  "university_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "forem_categories", force: :cascade do |t|
     t.string   "name",                   null: false
@@ -109,6 +121,22 @@ ActiveRecord::Schema.define(version: 20150817094854) do
   add_index "forem_views", ["updated_at"], name: "index_forem_views_on_updated_at"
   add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id"
+
+  create_table "searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "universities", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "city"
+    t.string   "country"
+    t.string   "image"
+    t.string   "link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",               null: false

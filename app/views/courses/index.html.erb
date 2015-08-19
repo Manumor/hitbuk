@@ -1,0 +1,12 @@
+  <h3>Find a course!</h3>
+
+<% @courses.each do |course| %>
+		<ul>
+   			<li> 
+    			<%= link_to course.name, course_path(course) %> - <%= @uni.find(course.university_id).name %>
+   			</li>
+ 		</ul>
+  <% end %>
+
+
+
