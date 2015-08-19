@@ -1,3 +1,5 @@
+
+
 atom_feed :language => 'en-US' do |feed|
   feed.title @forum.title
   feed.updated @topics.first.try(:updated_at)

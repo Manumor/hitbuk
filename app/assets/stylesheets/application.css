@@ -55,12 +55,16 @@
 }
 
 #forums_container {
-   padding-top: 70px;
-   padding-left: 275px;
-   padding-right: 200px;
+   margin-top: 70px;
+   margin-left: 275px;
+   margin-right: 200px;
 }
 #forums_title {
   color: #777;
 }
 *= require 'forem/base'
+
+
+
+
 

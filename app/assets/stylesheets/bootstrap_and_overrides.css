@@ -25,3 +25,18 @@ body
 .navbar-default .navbar-brand:hover {
     color: #D02020; 
 }
+
+#topic {
+  padding-left: 200px;
+}
+
+#category_container {
+    margin-top: 70px;
+   margin-left: 275px;
+   margin-right: 200px;
+}
+#topic {
+     margin-left: 275px;
+   margin-right: 200px;
+
+}
