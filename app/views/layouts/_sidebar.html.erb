@@ -11,11 +11,11 @@
             <% end %>
         </span>
         <ul class="nav nav-stacked" >
-            <li><a href="#GroupASub2">ToK and EE</a></li>
-            <div id="preferences">
+            <li><a href="./categories/tok-and-ee">ToK and EE</a></li>
+            <div id="preferences" class="nav nav-stacked">
             <% if user_signed_in? %>
                 <% current_user.subjects.each do |subject|%>
-                <li id="input_list_subjects"><%= subject.name %> </li>
+                <li ><a  href="./categories/tok-and-ee"><%= subject.name %></a></li>
                 <% end %>
             <% end %>
 

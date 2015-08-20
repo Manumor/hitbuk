@@ -10,7 +10,7 @@ function appendResults(e) {
     });
     	
     for(var i = 0; i < subjects.length; i++) {
-        $('#preferences').append('<p>' + subjects[i] + '</p>');
+        $('#preferences').append('<li><a  href="./categories/tok-and-ee">' + subjects[i] + '</a></li>');
     }
     handleSubmitEvent();
 

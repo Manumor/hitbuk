@@ -18,7 +18,7 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
-	                <li><%= link_to 'My Account', main_app.edit_user_registration_path %></li>
+	                <li><%= link_to 'My Profile', main_app.edit_user_registration_path %></li>
 					<li><%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete %></li>
 				<% else %>
 					<li><%= link_to('Log in', main_app.new_user_session_path) %></li>
