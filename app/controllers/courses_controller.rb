@@ -6,5 +6,7 @@ class CoursesController < ApplicationController
   end
   def show
     @courses = Course.find(params[:id])
+    @universities = University.find(params[:id])
+    @countries = Country.find(params[:id])
   end
 end

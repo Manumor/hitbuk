@@ -1,10 +1,13 @@
 function appendResults(data) {    
     $('#results').empty();
-    
+    console.log(data);
     for(var i = 0; i < data.length; i++) {
-        $('#results').append('<h4>' + data[i].name + '</h4>');
-        $('#results').append('<p>' + '- ' + data[i].description + '</p>');
-        $('#results').append('<p>' + '- ' + data[i].ibpoints  + ' (' + data[i].ibextra + ')' + '</p>' );
+        $('#results').append('<div id="border">' + '<h1 id="university">' + data[i].name);
+        $('#results').append('<img id="uni_picture" src=' + data[i].image + '%>></a></h1>' + '<ul id="list">');
+        for(var x = 0; i < data.courses.length; i++)
+        $('#results').append( '<li><%= link_to '+ data.courses[i].name + ', course_path(course) %></li> <% end %> </ul> <button class="btn btn-primary ladda-button" id="show_more" data-style="expand-right" type="submit">
+                <span type="submit">+ Find more courses in this university</span></button></div><% end %></div>');
+        }
     }
 }
 

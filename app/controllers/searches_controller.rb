@@ -1,31 +1,34 @@
 class SearchesController < ApplicationController
 	def university
+		@countries = Country.all
+		@universities = University.all
 		@courses = Course.all
-		@unis = University.all
 	end  
+	def index
+    @universities = University.find(params[:id])
+    @courses = Course.find(params[:id])
+  	end
 	def show_results
 
-		if params[:country] == ""
-			universities = University.where("name LIKE ?", "%#{params[:university_name]}%")
-			courses = []
+			countries = Country.where("country_name = ?", "%#{params[:country]}%")
+			universities = []
+				countries.each do |u|
+					unis = u.universities.where("name = ?", "%#{params[:university_name]}%")
+					universities = universities + unis 
+					end 
+					
+			resultUniversities = []
 				universities.each do |u|
-					cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
-					courses = courses + cs
+					uniMap = {name: u.name, courses: []}
+					cs = u.courses.where("name = ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
+					uniMap[:courses] = cs
+					resultUniversities << uniMap
 			    end 
-		else 
-			universities = University.where("country LIKE ? AND name LIKE ?", "#{params[:country]}", "%#{params[:university_name]}%") 
-			courses = []
-				universities.each do |u|
-					cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
-					courses = courses + cs
-			    end
-		end
 
 		if request.xhr?
 			respond_to do |format|
-				format.json{ render json: courses}
+				format.json{ render json: resultUniversities}
 			end
       	end 
-
 	end 
 end
