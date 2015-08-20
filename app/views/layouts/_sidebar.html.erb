@@ -4,12 +4,21 @@
      <li>
         <span class="button_group">
             <a href="#GroupA">Subjects</a>
+            <% if user_signed_in? %>
             <button id="button_subjects" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_add">Add</button>
+            <% else %>
+            <%= link_to('Add', main_app.new_user_session_path, :id => "link_add_subjects", :class => "btn btn-primary" )%>
+            <% end %>
         </span>
         <ul class="nav nav-stacked" >
             <li><a href="#GroupASub2">ToK and EE</a></li>
-            <div id="preferences"> 
-                <% current_user.subjects %>
+            <div id="preferences">
+            <% if user_signed_in? %>
+                <% current_user.subjects.each do |subject|%>
+                <li id="input_list_subjects"><%= subject.name %> </li>
+                <% end %>
+            <% end %>
+
             </div>
         </ul>
     </li>

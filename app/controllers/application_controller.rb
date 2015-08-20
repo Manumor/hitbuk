@@ -14,9 +14,6 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_up) << :username
     end
 
-    def get_subjects
-      @subject = current_user.subjects
-    end
 
 
 end

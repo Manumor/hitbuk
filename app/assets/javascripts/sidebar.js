@@ -3,6 +3,7 @@ var subjects;
 
 function appendResults(e) {
     e.preventDefault();
+    $('#preferences').empty();
     subjects = [];
     $.each($("input:checked"), function(){            
         subjects.push($(this).val());
