@@ -78,7 +78,7 @@
             <div class="panel-body">
                 <div class="btn" id="button_subject" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="checkbox" value="Spanish Ab Initio"> Spanish Ab Initio
+                        <input type="checkbox" value="Spanish Ab Initio" <% current_user.subjects.contains?('Spanish Ab Initio') %> <%= 'checked' %> <%end%> > Spanish Ab Initio
                     </label>
                     <label class="btn btn-default">
                          <input type="checkbox" value="Mandarin Ab Initio"> Mandarin Ab Initio

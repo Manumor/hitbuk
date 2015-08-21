@@ -49,3 +49,10 @@ body
     border-radius: 3px;
 
 }
+#user_list a {
+    color: #999;
+    padding: 4px 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
