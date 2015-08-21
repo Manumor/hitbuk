@@ -1,5 +1,49 @@
+<div class="col-md-2">
+	<%= render('layouts/sidebar.html.erb') %>
+</div>
+
+<div class="container">
+  <div class="row col-md-10">
+    <h2 class="lead title_dashboard">Featured Discussions</h2>
+
+	<div class="col-sm-6">
+        <img src="<%= asset_path( 'road_to.jpg' ) %>" class="img-responsive">
+        <h3>The Road to Ivy Schools</h3>
+        <p>A group of international students how they made it to top schools all over the world. Read their stories and participate in the discussion <%= link_to 'here', forem.forums_path %>.</p>
+     </div>
+     <div class="col-sm-6">
+        <img src="<%= asset_path( 'stockholm.jpg' ) %>" class="img-responsive">
+        <h3>Studying Business in Europe</h3>
+        <p>Our <a href="../searches/university">review</a> of undergraduate business schools in continental Europe. See where to go for top business education outside the usual routes of the US and the UK.</p>
+     </div>
+  </div>
 
 
+<div class="row">
 
+  <div class="col-md-2">
+	
+  </div>
 
-<h3>This the dashboard, only for login users</h3>
+  <div class="row col-md-10">
+    <h2 class="lead title_dashboard">Recent Forums</h2>
+
+	<div class="col-sm-6">
+        <img src="<%= asset_path( 'Essay.jpg' ) %>" class="img-responsive">
+     
+     </div>
+     <div class="col-sm-6">
+        <h3>How to write a good essay</h3>
+        <p>Follow our forum on how to write an original and winning <a href="../searches/university">essay</a> for the uni application from your peers.</p>
+        <h3>Is ToK the most boring subject?</h3>
+        <p>It seems ToK wins by a mile in the opinion og our forum members as the most boring subject. Agree? <a href="../searches/university">Join</a> the converstaion.</p>
+     </div>
+  </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<%= render('layouts/footer.html.erb') %>

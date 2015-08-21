@@ -25,7 +25,9 @@ body
 .navbar-default .navbar-brand:hover {
     color: #D02020; 
 }
-
+.footer {
+  margin-top: 4%;
+}
 #topic {
   padding-left: 200px;
 }
