@@ -4,23 +4,21 @@ class SearchesController < ApplicationController
 		@universities = University.all
 		@courses = Course.all
 	end  
-	def index
-    @universities = University.find(params[:id])
-    @courses = Course.find(params[:id])
+	def create	
+    @university = University.find(params[:id])
+    @course = Course.find(params[:id])
   	end
 	def show_results
 
-			countries = Country.where("country_name = ?", "%#{params[:country]}%")
-			universities = []
-				countries.each do |u|
-					unis = u.universities.where("name = ?", "%#{params[:university_name]}%")
-					universities = universities + unis 
-					end 
-					
+		universities = University.where("name LIKE ?","%#{params[:university_name]}%")
+		if params[:country] != "All"
+			universities = universities.where("country_id = ?", params[:country])
+		end
+			
 			resultUniversities = []
 				universities.each do |u|
-					uniMap = {name: u.name, courses: []}
-					cs = u.courses.where("name = ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
+					uniMap = {name: u.name, image: u.image, courses: []}
+					cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
 					uniMap[:courses] = cs
 					resultUniversities << uniMap
 			    end 

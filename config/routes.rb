@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
     get '/searches/university' => 'searches#university'
     post '/searches/university' => 'searches#show_results'
+
     resources :courses
     resources :searches
+    resources :universities
+    post '/universities/:id' => 'universities#show'
 
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.

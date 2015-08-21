@@ -14,7 +14,7 @@
 
 	Region    
 	<select id="country" type="text" name="country" >
-			<option value="">All</option>
+			<option value="All">All</option>
 			<% @countries.each do |country| %>
 				<option value="<%= country.id %>"><%= country.country_name %></option>
 			<% end %>
@@ -61,7 +61,7 @@
 					<li ><%= link_to course.name, course_path(course) %></li>
 				<% end %>
 			</ul>
-				<%= button_to "+ Find more courses in this university", searches_path, :method => 'get', :id => "show_more", :class => "btn btn-primary ladda-button"  %>
+				<%= link_to "+ Find more courses in this university	", university_path(university), :method => 'post',:id => "show_more", :class => "btn btn-primary ladda-button" %>
 		</div>
 	<% end %>
 </div>

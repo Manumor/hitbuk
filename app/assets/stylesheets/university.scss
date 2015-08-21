@@ -30,7 +30,13 @@
 }
 
 #show_more {
-	color: black;
+	background-color: #00C7D0;
+	border: #00C7D0;
+	color: white;
+}
+
+#show_more:hover {
+	background-color: green;
 }
 
 
