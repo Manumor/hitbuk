@@ -17,7 +17,26 @@ class DiscussionsController < ApplicationController
 			render 'new'
 		end
 	end
+		def edit
+		@discussion = Discussion.find(params[:id])
+	end
 
+	def update
+		@discussion = Discussion.find(params[:id])
+
+		if @discussion.update(params[:discussion].permit(:title, :body))
+			redirect_to @discussion
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@discussion = Discussion.find(params[:id])
+		@discussion.destroy
+
+		redirect_to discussions_path
+	end
 	private
 
 	def discussion_params
