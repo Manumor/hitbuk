@@ -1,3 +1,4 @@
+<br><br><br>
 <div class="border-form-div">
 <%= form_for @discussion do |f| %>
 	<% if @discussion.errors.any? %>
@@ -15,6 +16,9 @@
 	<br>
 	<%= f.label :body %><br>
 	<%= f.text_field :body %><br>
+	<br>
+	<%= f.label :image %><br>
+	<%= f.text_field :image %><br>
 	<br>
 	<%= f.submit %>
 <% end %>

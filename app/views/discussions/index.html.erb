@@ -1,4 +1,6 @@
-<p>Featured Discussion</p>
-<%= @discussions.each do |f| %>
-	<%= link_to f.title, discussion_path(discussion) %>
-<% end %> 
+
+	<p>Featured Discussion</p>
+	<% @discussions.each do |discussion| %>
+	<%= link_to discussion.title, discussion_path(discussion) %>
+	<img src='<%= asset_path(discussion.image) %>' >
+	<% end %>
