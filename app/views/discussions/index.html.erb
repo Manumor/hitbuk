@@ -1,0 +1,4 @@
+<p>Featured Discussion</p>
+<%= @discussions.each do |f| %>
+	<%= link_to f.title, discussion_path(discussion) %>
+<% end %> 
