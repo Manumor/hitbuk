@@ -20,6 +20,10 @@ class SearchesController < ApplicationController
 					uniMap = {name: u.name, image: u.image, id: u.id, courses: []}
 					cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
 					uniMap[:courses] = cs
+					no_courses_found = []
+					if u.courses.any?
+						no_courses_found << u
+					end 
 					resultUniversities << uniMap
 			    end 
 
