@@ -2,15 +2,19 @@ function appendResults(data) {
     $('#results').empty();
     console.log(data);
     console.log(data["courses"]);
+    var content = ''
     for(var i = 0; i < data.length; i++) {
-        $('#results').append('<div id="border">' + '<h1 id="univeristy_title">' + data[i].name);
-        $('#results').append('<img id="uni_picture" src="' + data[i].image + '"</a></h1>' + '<ul id="list">');
+        content += '<div id="border"><h1 id="univeristy_title">' + data[i].name +'<img id="uni_picture" src=' + data[i].image + '></a></h1>';
+        content += '<ul>';
         for(var x = 0; x < data[i].courses.length; x++) {
-            $('#results').append( '<li>' + '<% link_to ' + data[i].courses[x].name + ', course_path(course) %>' + '</li>');
-            }
-            $('#results').append( '</ul>' + '<%= link_to' + "+ Find more courses in this university " + ', university_path(university), :method => "post",:id => "show_more", :class => "btn btn-primary ladda-button" %>' + '</div>');
-    }
+           content += '<li id="list">' + '<a href="/courses/' + data[i].courses[x].id + '">' + data[i].courses[x].name + '</a>' + '</li>';
+        };
+        content += '</ul>';
+    content += '<a class="btn btn-primary ladda-button" id="show_more" href="/universities/' + data[i].id + '">' + '+ Find more courses in this university</a></div>';
+    };
+    $('#results').append(content);
 }
+
 function handleSubmitEvent(e) { 
     var formObj = $(this);    e.preventDefault();
 

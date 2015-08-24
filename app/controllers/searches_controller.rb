@@ -8,7 +8,7 @@ class SearchesController < ApplicationController
     @university = University.find(params[:id])
     @course = Course.find(params[:id])
   	end
-	def show_results
+	def show_results                                 
 
 		universities = University.where("name LIKE ?","%#{params[:university_name]}%")
 		if params[:country] != "All"
@@ -17,7 +17,7 @@ class SearchesController < ApplicationController
 			
 			resultUniversities = []
 				universities.each do |u|
-					uniMap = {name: u.name, image: u.image, courses: []}
+					uniMap = {name: u.name, image: u.image, id: u.id, courses: []}
 					cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
 					uniMap[:courses] = cs
 					resultUniversities << uniMap
