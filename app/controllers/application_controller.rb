@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
 
+
   def forem_user
     current_user
   end
+  
   helper_method :forem_user
 
   # Prevent CSRF attacks by raising an exception.

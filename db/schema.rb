@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20150824074417) do
 
+  create_table "countries", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "country_name"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -146,11 +152,11 @@ ActiveRecord::Schema.define(version: 20150824074417) do
     t.string   "name"
     t.text     "description"
     t.string   "city"
-    t.string   "country"
     t.string   "image"
     t.string   "link"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "country_id"
   end
 
   create_table "users", force: :cascade do |t|

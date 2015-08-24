@@ -1,0 +1,8 @@
+
+<h1 id="univeristy_title"><%= @university.name %> <img id="uni_picture" src=<%= @university.image %>></a></h1>
+		
+<ul id="list">
+	<% @courses.each do |course| %>
+		<li ><%= link_to course.name, course_path(course) %></li>
+	<% end %>
+</ul>

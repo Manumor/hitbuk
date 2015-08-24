@@ -1,7 +1,7 @@
 
 var subjects;
 
-function appendResults(e) {
+function handleResults(e) {
     e.preventDefault();
     $('#preferences').empty();
     subjects = [];
@@ -12,10 +12,10 @@ function appendResults(e) {
     for(var i = 0; i < subjects.length; i++) {
         $('#preferences').append('<li><a  href="./categories/tok-and-ee">' + subjects[i] + '</a></li>');
     }
-    handleSubmitEvent();
+    handleTheSubmitEvent();
 
   }
-function handleSubmitEvent(e) {   
+function handleTheSubmitEvent(e) {   
     var formURL = '/subjects';
     var formData = {subjects: subjects};
 
@@ -28,8 +28,8 @@ function handleSubmitEvent(e) {
     });
 }
 
-function attachFormListeners() {   
-    $('#submit_subjects').click(appendResults);
+function formDocument() {   
+    $('#submit_subjects').click(handleResults);
 }
 
-$(document).ready(attachFormListeners);
+$(document).ready(formDocument);

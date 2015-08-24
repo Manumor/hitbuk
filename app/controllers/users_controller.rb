@@ -5,6 +5,4 @@ class UsersController < ApplicationController
 			:username, :email,
 			:password, :password_confirmation)
 	end
-
-
 end

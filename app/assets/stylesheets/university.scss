@@ -1,3 +1,43 @@
-// Place all the styles related to the university controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron-flat {
+	margin: 30px;
+	padding: 10px;
+	background-color: solid #4DB8FFF;
+	height: 100%;
+	border: 1px solid #4DB8FF;
+	background: white;
+	width: 100%;
+	text-align: center;
+}
+
+#border {
+	display: block;
+	border-top: 1px solid black;
+	padding: 15px;
+}
+
+#list {
+	list-style: none;
+	font-size: 20px;
+}
+
+#results {
+	font-size: 20px;
+}
+
+#uni_picture {
+	float: right;
+	width: 152px;
+
+}
+
+#show_more {
+	background-color: #00C7D0;
+	border: #00C7D0;
+	color: white;
+}
+
+#show_more:hover {
+	background-color: green;
+}
+
+

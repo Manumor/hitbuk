@@ -57,8 +57,9 @@ body
     font-size: 16px;
     font-weight: 400;
 }
-.table {
 
+.topics .table-striped .table {
+  width:70%;
 }
 
 #forum {
