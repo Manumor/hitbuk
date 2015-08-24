@@ -10,7 +10,7 @@
                 <div class="col-lg-7  col-md-10 col-md-offset-1">
                 <h2 class="lead title_dashboard"><%= @discussion.title %></h2>
                 	<p>
-						<% if user_signed_in? %>
+						<% if user_signed_in? && current_user.admin?%>
 							| <%= link_to 'Edit', edit_discussion_path(@discussion) %> |
 						  <%= link_to 'Delete', discussion_path(@discussion), method: :delete, data: { confirm: 'Are you sure?' } %>
 	 					 <% end %>
