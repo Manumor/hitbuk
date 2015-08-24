@@ -16,7 +16,8 @@ function appendResults(data) {
 }
 
 function handleSubmitEvent(e) { 
-    var formObj = $(this);    e.preventDefault();
+    var formObj = $(this);    
+    e.preventDefault();
 
     var formURL = '/searches/university';
     var formData = formObj.serializeArray();
@@ -31,7 +32,7 @@ function handleSubmitEvent(e) {
 }
 
 
-function attachFormListeners() {   
+function attachFormListeners(e) {   
     $('#search_form').submit(handleSubmitEvent);
 }
 
