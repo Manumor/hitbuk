@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820104630) do
+ActiveRecord::Schema.define(version: 20150822135938) do
 
   create_table "countries", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20150820104630) do
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
   end
 
   create_table "forem_categories", force: :cascade do |t|
@@ -131,6 +139,13 @@ ActiveRecord::Schema.define(version: 20150820104630) do
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.integer  "user_id"
   end
 
   create_table "universities", force: :cascade do |t|

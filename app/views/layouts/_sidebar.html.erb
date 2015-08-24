@@ -1,23 +1,125 @@
 
 <ul class="nav nav-stacked fixed bs-docs-sidebar" id="sidebar">
-    <li>
-        <a href="#GroupA">Featured Discussions</a>
-        <ul class="nav nav-stacked" >
-            <li><a href="#GroupASub1" >Discussion 1</a></li>
-            <li><a href="#GroupASub2" >Discusion 2</a></li>
-        </ul>
-    </li>
+
      <li>
-        <a href="#GroupA">Subjects</a>
+        <span class="button_group">
+            <a href="#GroupA">Subjects</a>
+            <% if user_signed_in? %>
+            <button id="button_subjects" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_add">Add</button>
+            <% else %>
+            <%= link_to('Add', main_app.new_user_session_path, :id => "link_add_subjects", :class => "btn btn-primary" )%>
+            <% end %>
+        </span>
         <ul class="nav nav-stacked" >
-            <li><a href="#GroupASub1" >Math HL</a></li>
-            <li><a href="#GroupASub2" >English HL</a></li>
-            <li><a href="#GroupASub2" >Physics HL</a></li>
-             <li><a href="#GroupASub1" >Spanish SL</a></li>
-            <li><a href="#GroupASub2" >Biology SL</a></li>
-            <li><a href="#GroupASub2" >Business SL</a></li>
-            <li><a href="#GroupASub2">ToK and EE</a></li>
+            <li><%= link_to 'ToK and EE', "/forums/categories/tok-and-ee" %></li>
+            <div id="preferences" class="nav nav-stacked">
+            <% if user_signed_in? %>
+                <% current_user.subjects.each do |subject|%>
+                    <% if subject.name == "Math SL" %>
+                        <li ><%= link_to subject.name, "/forums/mathematics-sl"%></li>
+                    <% elsif subject.name == "Math HL" %>
+                        <li ><%= link_to subject.name, "/forums/mathematics-hl"%></li>
+                    <% elsif subject.name == "Math Studies" %>
+                        <li ><%= link_to subject.name, "/forums/mathematical-studies-sl"%></li>
+                    <% elsif subject.name == "Mandarin Ab Initio" %>    
+                        <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
+                    <% elsif subject.name == "German Ab Initio" %>
+                        <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
+                    <% elsif subject.name == "French Ab Initio" %>
+                        <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
+                    <% elsif subject.name == "Spanish Ab Initio" %>
+                        <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
+                    <% elsif subject.name == "Further Math" %>
+                        <li ><%= link_to subject.name, "/forums/further-mathematics-hl"%></li>
+                    <% else %> 
+                        <li ><%= link_to subject.name, "/forums"%></li>
+                    <% end %>
+                <% end %>
+            <% end %>
+
+            </div>
         </ul>
     </li>
-    <!-- Same for Group B & C -->
+    <li>
+        <%= link_to 'Featured discussions', main_app.discussions_path %>
+        <ul class="nav nav-stacked" >
+            <li><%= link_to 'The Road to Ivy Schools', '/discussions/1' %></li>
+            <li><%= link_to 'Is ToK the most boring subject?', '/discussions/2' %></li>
+        </ul>
+    </li>
 </ul>
+
+<!-- Modal appears when you click on 'ADD' -->
+
+<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Please select the subjects you are interested in:</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Mathematics</a>
+                    </h4>
+                </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="btn" id="button_subject" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="Math Studies"> Math Studies
+                    </label>
+                    <label class="btn btn-default">
+                         <input type="checkbox" value="Math SL"> Math SL
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="Math HL"> Math HL
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="Further Math"> Further Math
+                    </label>
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Languages</a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="btn" id="button_subject" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="Spanish Ab Initio" > Spanish Ab Initio
+                    </label>
+                    <label class="btn btn-default">
+                         <input type="checkbox" value="Mandarin Ab Initio"> Mandarin Ab Initio
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="French Ab Initio"> French Ab Initio
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" value="German Ab Initio"> German Ab Initio
+                    </label>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button id="submit_subjects" type="button" class="btn btn-primary" data-dismiss="modal">Select</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+

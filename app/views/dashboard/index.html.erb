@@ -1,5 +1,51 @@
+<div class="col-md-2">
+	<%= render('layouts/sidebar.html.erb') %>
+</div>
+
+<div class="container">
+  <div class="row col-md-10">
+    <h2 class="lead title_dashboard">Featured Discussions</h2>
+
+	<div class="col-sm-6">
+        <img src="<%= asset_path( 'road_to.jpg' ) %>" class="img-responsive">
+        <h3>The Road to Ivy Schools</h3>
+        <p>A group of international students how they made it to top schools all over the world. Read their stories and participate in the discussion <%= link_to 'here', forem.forums_path %>.</p>
+     </div>
+     <div class="col-sm-6">
+        <img src="<%= asset_path( 'stockholm.jpg' ) %>" class="img-responsive">
+        <h3>Studying Business in Europe</h3>
+        <p>Our <a href="../searches/university">review</a> of undergraduate business schools in continental Europe. See where to go for top business education outside the usual routes of the US and the UK.</p>
+     </div>
+  </div>
 
 
+<div class="row">
 
+  <div class="col-md-2">
+	
+  </div>
 
-<h3>This the dashboard, only for login users</h3>
+  <div class="row col-md-10">
+    <h2 class="lead title_dashboard">Recent Forums</h2>
+
+	<div class="col-sm-6">
+        <img src="<%= asset_path( 'Essay.jpg' ) %>" class="img-responsive">
+     
+     </div>
+     <div class="col-sm-6">
+      <h3><%= link_to "Writing essay applications", "/forums/essays/topics/essays-for-ivy-league"%></h3>
+      <p>What are Ivy schools looking for in your essays?</p>
+      </div>
+      <div class="col-sm-6">
+      <h3><%= link_to "Math SL is enough", "/forums/mathematics-sl/topics/is-math-sl-enough-to-get-into-lsc"%></h3>
+      <p>Worried that you are not at the level?</p>
+     </div>
+  </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<%= render('layouts/footer.html.erb') %>

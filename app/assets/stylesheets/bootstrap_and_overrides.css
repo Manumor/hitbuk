@@ -25,7 +25,9 @@ body
 .navbar-default .navbar-brand:hover {
     color: #D02020; 
 }
-
+.footer {
+  margin-top: 4%;
+}
 #topic {
   padding-left: 200px;
 }
@@ -39,4 +41,29 @@ body
      margin-left: 275px;
    margin-right: 200px;
 
+}
+#link_add_subjects {
+ 
+    color:white;
+     padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+
+}
+#user_list a {
+    color: #999;
+    padding: 4px 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.table {
+
+}
+
+#forum {
+  color:#999;
+}
+a {
+  color:#5471B0;
 }

@@ -1,0 +1,12 @@
+<div class="col-md-2">
+	<%= render('layouts/sidebar.html.erb') %>
+</div>
+<div class="container">
+	<p>Featured Discussion</p>
+	<% @discussions.each do |discussion| %>
+		<div class="col-sm-5">
+			<h2 class="lead title_dashboard"><%= link_to discussion.title, discussion_path(discussion) %></h2>
+			<img src='<%= asset_path(discussion.image) %>'  class="img-responsive">
+		</div>
+	<% end %>
+</div>

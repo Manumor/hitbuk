@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
   def forem_name
     username
   end
-
+  has_many :subjects
 end
