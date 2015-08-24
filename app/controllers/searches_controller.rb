@@ -18,19 +18,18 @@ class SearchesController < ApplicationController
 			resultUniversities = []
 				universities.each do |u|
 					uniMap = {name: u.name, image: u.image, id: u.id, courses: []}
-					cs = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
-					uniMap[:courses] = cs
-					no_courses_found = []
-					if u.courses.any?
-						no_courses_found << u
+					uniMap[:courses] = u.courses.where("name LIKE ? AND ibpoints >= ? AND ibpoints <= ?", "%#{params[:course_name]}%", params[:ibminimum], params[:ibmaximum])
+					if uniMap[:courses].empty?
+						""
+					else 
+						resultUniversities << uniMap
 					end 
-					resultUniversities << uniMap
 			    end 
 
-		if request.xhr?
+		else request.xhr?
 			respond_to do |format|
 				format.json{ render json: resultUniversities}
 			end
-      	end 
+      	end  
 	end 
-end
+

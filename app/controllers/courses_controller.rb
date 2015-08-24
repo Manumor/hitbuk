@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
     @uni = University.all
   end
   def show
+  	@universities = University.all
     @course = Course.find(params[:id])
   end
 end
