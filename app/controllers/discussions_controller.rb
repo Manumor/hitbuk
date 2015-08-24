@@ -28,7 +28,7 @@ before_action :verify_is_admin, except: [:index, :show]
 	def update
 		@discussion = Discussion.find(params[:id])
 
-		if @discussion.update(params[:discussion].permit(:title, :body))
+		if @discussion.update(params[:discussion].permit(:title, :body, :image))
 			redirect_to @discussion
 		else
 			render 'edit'
@@ -45,7 +45,7 @@ before_action :verify_is_admin, except: [:index, :show]
 	private
 
 	def discussion_params
-		params.require(:discussion).permit(:title, :body)
+		params.require(:discussion).permit(:title, :body, :image)
 	end
 
 	def verify_is_admin
