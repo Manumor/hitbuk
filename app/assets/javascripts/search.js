@@ -34,7 +34,7 @@ function handleSubmitEvent(e) {
         type: "POST",
         data: formData,
         success: appendResults,
-        error: function() {console.log('oops')}
+        error: function() {console.log('There was an error')}
     });
 }
 

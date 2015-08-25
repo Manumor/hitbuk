@@ -7,12 +7,27 @@
   </div>
   <div class="col-md-6" id="user_info">
     
-    <h4> User Name: <%= current_user.username %> </h4>
-    <h4> My Subjects </h4>
+    <h4 id="user_attr">User Name: </h4>
+    <h3 id="user_details"> <%= current_user.username %> </h3>
+    <h4 id="user_attr">User Email: </h4>
+    <h4 id="user_details"> <%= current_user.email %> </h4>
+    <h4 id="user_attr"> My Subjects: </h4>
     <ul class="nav nav-stacked" id="user_list">
 
          <% current_user.subjects.each do |subject|%>
         <li ><a  href="#"><%= subject.name %></a></li>
+        <% end %>
+    </ul>
+    <h4 id="user_attr"> My Courses: </h4>
+    <ul class="nav nav-stacked" id="user_course">
+        <% current_user.courses.each do |course|%>
+          <li><%= link_to course.name, course_path(course) %><span id="uni_title"><%= University.find(course.id).name %></span></li>
+
+          <button type="button" class="btn btn-default btn-sm" id="trash_delete">
+            <div class="fa fa-trash-o"></div> Delete
+          </button>
+    
+          <br><br>
         <% end %>
     </ul>
   </div>

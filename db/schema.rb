@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822135938) do
+ActiveRecord::Schema.define(version: 20150825144307) do
 
   create_table "countries", force: :cascade do |t|
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "country_name"
+  end
+
+  create_table "course_interests", force: :cascade do |t|
+    t.string   "course_id"
+    t.string   "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -29,6 +36,13 @@ ActiveRecord::Schema.define(version: 20150822135938) do
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "courses_users", force: :cascade do |t|
+    t.string   "user_id"
+    t.string   "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "discussions", force: :cascade do |t|

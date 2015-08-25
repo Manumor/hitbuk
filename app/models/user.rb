@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
     username
   end
   has_many :subjects
+  has_many :courses_users
+  has_many :courses, :through => :courses_users
 end

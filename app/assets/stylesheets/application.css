@@ -91,4 +91,26 @@
   margin-top: 3%;
 }
 
+#user_details {
+  text-align: center;
+}
 
+#user_list {
+  text-align: center;
+}
+
+#user_attr {
+  border-bottom: 1px solid #999;
+}
+
+#uni_title {
+  color: black;
+}
+
+#user_course * {
+  display: inline;  
+}
+
+#trash_delete {
+  float: right;
+}

@@ -49,8 +49,16 @@
 			<% end %>
 			</h3>
 
-			<br><br>
+			<br>
 
 			<%= link_to 'Back', :back, :class => "btn btn-lg btn-default"%> 
+			<% if user_signed_in? %>
+            	<%= link_to 'Save Course', course_path, :id => "submit_courses", :class => "btn btn-lg btn-default", :type => "submit", data: {id: @course.id} %> 
+            <% else %>
+            	<%= link_to 'Save Course', main_app.new_user_session_path, :id => "submit_courses", :class => "btn btn-lg btn-default", :type => "submit", data: {id: @course.id} %>
+            <% end %>
+			<div id="course_already_saved">
+				
+		    </div>
 		</div>
 	</div>
