@@ -3,6 +3,7 @@
   <%= render :partial => 'forem/forums/head', :locals => { :forum => @forum } %>
 
   <%= forem_pages_widget(@topics) %>
+  <div class="col-md-8" id="topics_table">
   <table class='topics table-striped table' cellspacing='0'>
     <thead>
       <tr>
@@ -20,5 +21,6 @@
       <%= render @topics %>
     </tbody>
   </table>
+  </div>
   <%= forem_pages_widget(@topics) %>
 </div>

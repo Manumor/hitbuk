@@ -78,7 +78,11 @@
 }
 
 .table {
-  width:80%;
+  width:95%;
+}
+
+#topics_table {
+  margin-top: 2%;
 }
 
 #post_3 {
@@ -90,5 +94,4 @@
   width:60%;
   margin-left: 10%;
 }
-
 

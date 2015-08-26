@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 20150825144307) do
     t.string   "country_name"
   end
 
-  create_table "course_interests", force: :cascade do |t|
-    t.string   "course_id"
-    t.string   "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "courses", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
