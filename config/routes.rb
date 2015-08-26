@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :courses_users
     resources :searches
     resources :universities
+    resources :profiles 
     post '/universities/:id' => 'universities#show'
 
     resources :discussions
