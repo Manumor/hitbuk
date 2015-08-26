@@ -1,6 +1,7 @@
-class CourseUserController < ApplicationController
+class CoursesUsersController < ApplicationController
 	def destroy
-		@user = Courses_Users.where("user_id = ? && course_id = ?", current_user.id)
-		@user.delete!
+		coursesuser = CoursesUser.find(params[:id])
+		coursesuser.destroy
+		render :nothing
 	end
 end
