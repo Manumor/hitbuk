@@ -41,7 +41,7 @@
 
 <br><br>
 
-<button class="btn btn-primary ladda-button" data-style="expand-right" type="submit">
+	<button class="btn btn-primary ladda-button" data-style="expand-right" type="submit">
         <span class="ladda-label"> Search </span>
     </button>
 </form>
@@ -54,18 +54,7 @@
 <div class='col-md-6'>
 <div class='row'>
 <div id="results">
-		<% @universities.each do |university| %>
-			<div id="border">
-				<h1 id="univeristy_title"><%= university.name %> <img id="uni_picture" src=<%= university.image %>></a></h1>
-				<ul>
-						<% university.courses.each do |course| %>
-							<li id="list"><%= link_to course.name, course_path(course) %></li>
-							<% end %>
-				</ul>
-					<%= link_to "+ Find more courses in this university", university_path(university), :method => 'post',:id => "show_more", :class => "btn btn-primary ladda-button" %>
-			</div>
-		<% end %>
+		
 </div>
 </div>	
-
 </body>

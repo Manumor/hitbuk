@@ -4,8 +4,10 @@ Rails.application.routes.draw do
     post '/searches/university' => 'searches#show_results'
 
     resources :courses
+    resources :courses_users
     resources :searches
     resources :universities
+    resources :profiles 
     post '/universities/:id' => 'universities#show'
 
     resources :discussions

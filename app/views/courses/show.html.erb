@@ -1,6 +1,64 @@
-		<h1><%= @course.name %></h1>
+<div class='col-md-3'></div>
+	<div class='col-md-6'>	
+		<div class="margin">
 
-		<%= @course.description %>
-		<br><br>
-		Requirements: 
-		<%= @course.ibpoints %> ( <%= @course.ibextra %> ) or <%= @course.alevels %> ( <%= @course.aextra %> ) 
+			<h3 class="content"><b>University:</b>
+ 			<span id="course_input"><%= @universities.find(@course.university_id).name %></span>
+			</h3>
+
+			<br><br>
+
+			<h3 class="content"><b>Course:</b>
+			<% if @course.name.length < 50 %>
+ 				<span id="course_input"><%= @course.name %></span>
+			<% else %>
+ 				<%= @course.name %>
+			<% end %>
+			</h3>
+
+			<br><br>
+
+			<h3 class="content"><b>IB Points:</b>
+ 			<span id="course_input"><%= @course.ibpoints %></span>
+			</h3>
+
+			<br><br>
+
+			<h3 class="content"><b>IB Requirements:</b>
+			<% if @course.ibextra.length < 50 %>
+ 				<span id="course_input"><%= @course.ibextra %></span>
+			<% else %>
+ 				<%= @course.ibextra %>
+			<% end %>
+			</h3>
+
+			<br><br>
+
+			<h3 class="content"><b>A Levels:</b>
+ 			<span id="course_input"><%= @course.alevels %></span>
+			</h3>
+
+			<br><br>
+
+
+			<h3 class="content"><b>A Levels Req:</b>
+			<% if @course.aextra.length < 50 %>
+ 				<span id="course_input"><%= @course.aextra %></span>
+			<% else %>
+ 				<%= @course.aextra %>
+			<% end %>
+			</h3>
+
+			<br>
+
+			<%= link_to 'Back', :back, :class => "btn btn-lg btn-default"%> 
+			<% if user_signed_in? %>
+            	<%= link_to 'Save Course', course_path, :id => "submit_courses", :class => "btn btn-lg btn-default", :type => "submit", data: {id: @course.id} %> 
+            <% else %>
+            	<%= link_to 'Save Course', main_app.new_user_session_path, :id => "submit_courses", :class => "btn btn-lg btn-default", :type => "submit", data: {id: @course.id} %>
+            <% end %>
+			<div id="course_already_saved">
+				
+		    </div>
+		</div>
+	</div>

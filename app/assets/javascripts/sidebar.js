@@ -1,4 +1,3 @@
-
 var subjects;
 
 function handleResults(e) {
@@ -8,7 +7,7 @@ function handleResults(e) {
     $.each($("input:checked"), function(){            
         subjects.push($(this).val());
     });
-    	
+        
     for(var i = 0; i < subjects.length; i++) {
         $('#preferences').append('<li><a  href="./categories/tok-and-ee">' + subjects[i] + '</a></li>');
     }
