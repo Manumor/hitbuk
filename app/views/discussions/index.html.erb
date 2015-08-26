@@ -2,11 +2,18 @@
 	<%= render('layouts/sidebar.html.erb') %>
 </div>
 <div class="container">
-	<p>Featured Discussion</p>
+<h2 class="lead title_dashboard">Featured Discussions</h2>
+  <div class="row col-md-8">
 	<% @discussions.each do |discussion| %>
-		<div class="col-sm-5">
-			<h2 class="lead title_dashboard"><%= link_to discussion.title, discussion_path(discussion) %></h2>
+		<div class="col-sm-6">
+			<h2 class="lead"><%= link_to discussion.title, discussion_path(discussion) %></h2>
 			<img src='<%= asset_path(discussion.image) %>'  class="img-responsive">
 		</div>
 	<% end %>
+
 </div>
+</div>
+
+
+	<%= render('layouts/footer.html.erb') %>
+

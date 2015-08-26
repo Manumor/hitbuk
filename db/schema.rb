@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(version: 20150825144307) do
     t.boolean  "forem_admin",            default: false
     t.string   "forem_state",            default: "pending_review"
     t.boolean  "forem_auto_subscribe",   default: false
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

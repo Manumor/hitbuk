@@ -64,3 +64,4 @@ u8 = University.create(name: "Boston University", city: "Boston", country_id: 2,
 		Course.create(name: "Law", alevels: "AAS", ibpoints: 37, aextra: "", ibextra: "HL 566", university_id: u8.id)
 		Course.create(name: "Medicine", alevels: "AAA", ibpoints: 39, aextra: "math or chemistry with biology", ibextra: "HL math and a science with 666 for HL", university_id: u8.id)
 		Course.create(name: "Economics", alevels: "AAA", ibpoints: 38, aextra: "math or economics", ibextra: "HL economics or business with 666 for HL", university_id: u8.id)
+

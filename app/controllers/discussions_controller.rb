@@ -1,4 +1,8 @@
 class DiscussionsController < ApplicationController
+before_action :verify_is_admin, except: [:index, :show]
+
+
+
 	def index
 		@discussions = Discussion.all
 	end
@@ -24,7 +28,7 @@ class DiscussionsController < ApplicationController
 	def update
 		@discussion = Discussion.find(params[:id])
 
-		if @discussion.update(params[:discussion].permit(:title, :body))
+		if @discussion.update(params[:discussion].permit(:title, :body, :image))
 			redirect_to @discussion
 		else
 			render 'edit'
@@ -37,9 +41,20 @@ class DiscussionsController < ApplicationController
 
 		redirect_to discussions_path
 	end
+	
 	private
 
 	def discussion_params
-		params.require(:discussion).permit(:title, :body)
+		params.require(:discussion).permit(:title, :body, :image)
+	end
+
+	def verify_is_admin
+  		 authenticate_user!
+
+  		if current_user.admin
+     			return
+  		else
+  		 	redirect_to :controller=>'dashboard', :action => 'index'
+		end
 	end
 end

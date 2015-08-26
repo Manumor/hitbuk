@@ -56,7 +56,7 @@
 
 #forums_container {
    margin-top: 70px;
-   margin-left: 275px;
+   margin-left: 300px;
    margin-right: 200px;
 }
 #forums_title {
@@ -68,6 +68,30 @@
   margin-top: 30px;
 }
 
+#profile_title {
+  color: #999;
+  margin-left: 25%;
+  margin-top: 3%;
+}
+.body > div.forum > table {
+  margin-left: 30px;
+}
 
+.table {
+  width:95%;
+}
 
+#topics_table {
+  margin-top: 2%;
+}
+
+#post_3 {
+  width: 80%;
+  padding-left: 10%;
+}
+
+#post_text {
+  width:60%;
+  margin-left: 10%;
+}
 
