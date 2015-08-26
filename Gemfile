@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "paperclip", "~> 4.3"
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'will_paginate', '3.0.5'

@@ -1,10 +1,13 @@
+#profile_container {
+  margin-left: 17%;
+}
+
 #user_info {
-  color: #999;
+  background-color: #EDE6E2;
   margin-top: 30px;
   max-width: 700px;
   padding: 40px 40px 40px;
   margin: 0px auto;
-  background-color: #fff;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 30px;
      -moz-border-radius: 50x;
@@ -15,17 +18,29 @@
 }
 
 #profile_title {
-  color: #999;
   margin-left: 25%;
-  margin-top: 3%;
+}
+
+#username_profile{
+  padding-left:150px;
+  color: #564646;
+
 }
 
 .user_details {
   text-align: center;
+  color: #564646;
 }
 
 #user_list {
   text-align: center;
+  color: #564646;
+}
+
+#user_list a {
+  text-align: center;
+  font-size: 17px;
+  color: #564646;
 }
 
 .user_attr {
@@ -33,11 +48,13 @@
 }
 
 #uni_title {
-  color: black;
+  color: #564646;
 }
 
 #user_course * {
-  display: inline;  
+  display: inline;
+  font-size: 15px;
+  color: #564646; 
 }
 
 #trash_delete {
@@ -49,5 +66,20 @@
 }
 
 #my_account_link a {
-  color: #999;
+  color: #564646;
+}
+
+.round-image-50 {
+  float: left;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 50px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    height: 120px;
+    width: 120px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+
 }
