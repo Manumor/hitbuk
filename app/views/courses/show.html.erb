@@ -55,7 +55,7 @@
 			<% if user_signed_in? %>
             	<%= link_to 'Save Course', course_path, :id => "submit_courses", :class => "btn btn-lg btn-default", :type => "submit", data: {id: @course.id} %> 
             <% else %>
-            	<%= link_to 'Save Course', main_app.new_user_session_path, :id => "submit_courses", :class => "btn btn-lg btn-default", :type => "submit", data: {id: @course.id} %>
+            	<%= link_to 'Save Course', main_app.new_user_session_path, :id => "redirect_sign_in", :class => "btn btn-lg btn-default" %>
             <% end %>
 			<div id="course_already_saved">
 				
