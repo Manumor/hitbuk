@@ -1,0 +1,56 @@
+  <div class='col-md-1'></div>	
+  <div class='col-md-10'>
+		<div class="compare_content">
+			<table class="table table-striped" id="comparison_table"></tr></th>
+      <br>
+      <h1 id="comparison_title">Course Comparison </h1>
+      <br><br>
+    			<tbody>
+            <tr>
+              <td></td>
+              <% @courses_attrs.each do |course| %>
+                  <td align="center"><img id="compare_image" src=<%= University.find(course.university_id).image %>></td>
+              <% end %>
+              </tr>
+
+              <tr>
+              <td><b>University</b></td>
+              <% @courses_attrs.each do |course| %>
+                  <td><%= University.find(course.university_id).name %></td>
+              <% end %>
+              </tr>
+
+              <tr>
+              <td><b>Course</b></td>
+              <% @courses_attrs.each do |course| %>
+                  <td><%= link_to course.name, course_path(course) %></td>
+              <% end %>
+              </tr>
+              <tr>
+              <td><b>IB Score</b></td>
+              <% @courses_attrs.each do |course| %>
+                  <td><%= course.ibpoints %></td>
+              <% end %>
+              </tr>   
+              <tr>
+              <td><b>IB extra</b></td>
+              <% @courses_attrs.each do |course| %>
+                  <td><%= course.ibextra %></td>
+              <% end %>
+              </tr>   
+              <tr>
+              <td><b>A Levels</b></td>
+              <% @courses_attrs.each do |course| %>
+                  <td><%= course.alevels %></td>
+              <% end %>
+              </tr>   
+              <tr>
+              <td><b>A Levels extra</b></td>
+              <% @courses_attrs.each do |course| %>
+                  <td><%= course.aextra %></td>
+              <% end %>
+              </tr>  
+    			</tbody>
+ 			</table>
+		</div>
+	</div>

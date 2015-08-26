@@ -61,7 +61,34 @@ u7 = University.create(name: "Columbia University", city: "New York", country_id
 u8 = University.create(name: "Boston University", city: "Boston", country_id: 2,image: "http://msfhq.com/wp-content/uploads/2010/12/Boston-University-Logo.jpg", link: "link")
 
 		Course.create(name: "Art History", alevels: "ABB", ibpoints: 35, aextra: "art", ibextra: "HL art or music", university_id: u8.id)
-		Course.create(name: "Law", alevels: "AAS", ibpoints: 37, aextra: "", ibextra: "HL 566", university_id: u8.id)
+		Course.create(name: "Law", alevels: "AAB", ibpoints: 37, aextra: "", ibextra: "HL 566", university_id: u8.id)
 		Course.create(name: "Medicine", alevels: "AAA", ibpoints: 39, aextra: "math or chemistry with biology", ibextra: "HL math and a science with 666 for HL", university_id: u8.id)
 		Course.create(name: "Economics", alevels: "AAA", ibpoints: 38, aextra: "math or economics", ibextra: "HL economics or business with 666 for HL", university_id: u8.id)
 
+u9 = University.create(name: "University of Toronto", city: "Toronto", country_id: 3,image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/UofT_Logo.svg/1280px-UofT_Logo.svg.png", link: "link")
+
+		Course.create(name: "Computer Science", alevels: "ABB", ibpoints: 35, aextra: "Mathematics or English", ibextra: "English HL or SL, Math HL or SL (Math Studies not acceptable)", university_id: u9.id)
+		Course.create(name: "Mathematics", alevels: "AAB", ibpoints: 37, aextra: "Mathematics", ibextra: "English HL or SL, Math HL or SL (Math Studies not acceptable)", university_id: u9.id)
+		Course.create(name: "Medicine", alevels: "AAB", ibpoints: 37, aextra: "math or chemistry with biology", ibextra: "HL math and a science with 666 for HL", university_id: u9.id)
+		Course.create(name: "Economics", alevels: "ABB", ibpoints: 33, aextra: "", ibextra: "655 for HL", university_id: u9.id)
+
+u10 = University.create(name: "McGill University", city: "Montreal", country_id: 3,image: "http://www.quebecnorthshore.org/sites/nsca/files/logos/McGill-Logo.jpg", link: "link")
+
+		Course.create(name: "Art History", alevels: "ABB", ibpoints: 35, aextra: "An artistic subject", ibextra: "HL art or music", university_id: u10.id)
+		Course.create(name: "Law", alevels: "AAB", ibpoints: 37, aextra: "", ibextra: "HL 666", university_id: u10.id)
+		Course.create(name: "Medicine", alevels: "AAB", ibpoints: 37, aextra: "math or chemistry with biology", ibextra: "HL math and a science with 666 for HL", university_id: u10.id)
+		Course.create(name: "Economics", alevels: "ABB", ibpoints: 35, aextra: "", ibextra: "English at SL or HL with a humanity at HL", university_id: u10.id)
+
+u11 = University.create(name: "The University of British Columbia", city: "Vancouver", country_id: 3,image: "http://www.agf.gov.bc.ca/busmgmt/2008_templates/images/logos/bcgov.gif", link: "link")
+
+		Course.create(name: "Applied Biology", alevels: "ABB", ibpoints: 35, aextra: "Biology or Chemistry", ibextra: "Math at SL or HL and a science(Biology, Chemistry or Physics)", university_id: u11.id)
+		Course.create(name: "Engineering", alevels: "ABB", ibpoints: 36, aextra: "Physics or Math", ibextra: "Math, Chemistry and Physics at SL or HL)", university_id: u11.id)
+		Course.create(name: "Music", alevels: "BBB", ibpoints: 32, aextra: "Audition", ibextra: "Audition", university_id: u11.id)
+		Course.create(name: "Economics", alevels: "AAA", ibpoints: 34, aextra: "math or economics", ibextra: "Math (Standard or Higher Level)", university_id: u11.id)
+
+u12 = University.create(name: "Western University", city: "London", country_id: 3,image: "http://communications.uwo.ca/comms/img/logo_teasers/Horizontal_Full.gif", link: "link")
+
+		Course.create(name: "Health Studies", alevels: "BBB", ibpoints: 31, aextra: "Biology or Math", ibextra: "HL or SL Biology and Math", university_id: u12.id)
+		Course.create(name: "Medical Sciences", alevels: "AAB", ibpoints: 36, aextra: "Biology, Math or Chemistry", ibextra: "SL or HL Math, Biology and Chemistry", university_id: u12.id)
+		Course.create(name: "Engineering", alevels: "AAB", ibpoints: 36, aextra: "Either two math, chemistry or biology", ibextra: "SL or HL Math and Biology or Chemistry", university_id: u12.id)
+		Course.create(name: "Nursing", alevels: "BBB", ibpoints: 30, aextra: "", ibextra: "HL or SL Biology, Math, Chemistry or Physics", university_id: u12.id)

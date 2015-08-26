@@ -20,9 +20,9 @@
         <li ><a  href="#"><%= subject.name %></a></li>
         <% end %>
     </ul>
+
     <h4 class="user_attr"> My Courses: </h4>
     <ul class="nav nav-stacked" id="user_course">
-
         <% current_user.courses.each do |course|%>
 
           <li id="course_user_choice"><%= link_to course.name, course_path(course) %><span id="uni_title"><%= University.find(course.university_id).name %></span>
@@ -33,6 +33,8 @@
         <% end %>
 
     </ul>
+    <br>
+ <%= link_to 'Compare Courses', courses_users_path, :class => "btn btn-primary btn-lg btn-block", :id => "compare_button" %>
   </div>
   <div class="col-md-1">
   </div>
