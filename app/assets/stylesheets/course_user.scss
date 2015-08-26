@@ -1,3 +1,22 @@
-// Place all the styles related to the CourseUser controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.compare_content {
+	margin: 30px;
+	text-align: center;
+}
+
+#compare_image {
+	width: 100px;
+}
+
+#comparison_table {
+	table-layout: fixed;
+}
+
+#comparison_title {
+	font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+	font-size: 49px;
+	font-style: normal;
+	font-variant: normal;
+	color: #999;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+}
