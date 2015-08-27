@@ -9,8 +9,10 @@ function handleResults(e) {
     });
         
     for(var i = 0; i < subjects.length; i++) {
-        $('#preferences').append('<li><a  href="./categories/tok-and-ee">' + subjects[i] + '</a></li>');
-    }
+       var str = subjects[i];
+       str = str.replace(/\s+/g, '-').toLowerCase();
+       $('#preferences').append('<li><a  href="/forums/' + str + '">' + subjects[i] + '</a></li>');
+   }
     handleTheSubmitEvent();
 
   }
