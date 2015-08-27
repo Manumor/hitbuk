@@ -14,21 +14,17 @@
             <div id="preferences" class="nav nav-stacked">
             <% if user_signed_in? %>
                 <% current_user.subjects.each do |subject|%>
-                    <% if subject.name == "Math SL" %>
+                    <% if subject.name == "Mathematics SL" %>
                         <li ><%= link_to subject.name, "/forums/mathematics-sl"%></li>
-                    <% elsif subject.name == "Math HL" %>
+                    <% elsif subject.name == "Mathematics HL" %>
                         <li ><%= link_to subject.name, "/forums/mathematics-hl"%></li>
-                    <% elsif subject.name == "Math Studies" %>
+                    <% elsif subject.name == "Mathematical Studies SL" %>
                         <li ><%= link_to subject.name, "/forums/mathematical-studies-sl"%></li>
-                    <% elsif subject.name == "Mandarin Ab Initio" %>    
+                    <% elsif subject.name == "Language Ab Initio" %>    
                         <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
-                    <% elsif subject.name == "German Ab Initio" %>
-                        <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
-                    <% elsif subject.name == "French Ab Initio" %>
-                        <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
-                    <% elsif subject.name == "Spanish Ab Initio" %>
-                        <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
-                    <% elsif subject.name == "Further Math" %>
+                    <% elsif subject.name == "Language B" %>
+                        <li ><%= link_to subject.name, "/forums/language-b"%></li>
+                    <% elsif subject.name == "Further Mathematics HL" %>
                         <li ><%= link_to subject.name, "/forums/further-mathematics-hl"%></li>
                     <% else %> 
                         <li ><%= link_to subject.name, "/forums"%></li>

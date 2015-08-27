@@ -23,8 +23,23 @@
     <ul class="nav nav-stacked" id="user_list">
 
          <% current_user.subjects.each do |subject|%>
-        <li ><a  href="#"><%= subject.name %></a></li>
+          <% if subject.name == "Mathematics SL" %>
+                        <li ><%= link_to subject.name, "/forums/mathematics-sl"%></li>
+                    <% elsif subject.name == "Mathematics HL" %>
+                        <li ><%= link_to subject.name, "/forums/mathematics-hl"%></li>
+                    <% elsif subject.name == "Mathematical Studies SL" %>
+                        <li ><%= link_to subject.name, "/forums/mathematical-studies-sl"%></li>
+                    <% elsif subject.name == "Language Ab Initio" %>    
+                        <li ><%= link_to subject.name, "/forums/language-ab-initio"%></li>
+                    <% elsif subject.name == "Language B" %>
+                        <li ><%= link_to subject.name, "/forums/language-b"%></li>
+                    <% elsif subject.name == "Further Mathematics HL" %>
+                        <li ><%= link_to subject.name, "/forums/further-mathematics-hl"%></li>
+                    <% else %> 
+                        <li ><%= link_to subject.name, "/forums"%></li>
+                    <% end %>
         <% end %>
+
     </ul>
 
     <h4 class="user_attr"> My Courses: </h4>
